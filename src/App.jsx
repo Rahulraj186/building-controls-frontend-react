@@ -5,15 +5,6 @@ import RoomCard from "./Components/RoomCard";
 function App() {
   const [building, setBuilding] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/building");
-      const data = await response.json();
-      setBuilding(data);
-    };
-    fetchData();
-  }, []);
-
   const handleTemperatureChange = (newTemperature) => {
     setBuilding({ ...building, requestedTemperature: newTemperature });
   };
